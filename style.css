@@ -1,0 +1,79 @@
+body {
+  width: 100%;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 65px;
+  width: 65px;
+}
+
+.inputBox {
+  width: 65px;
+  height: 65px;
+  box-sizing: border-box;
+  text-align: center;
+  border: black 1px solid;
+  caret-color: transparent;
+  text-transform: uppercase;
+  text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+  color: white;
+  font-weight: 800;
+  font-size: 24px;
+  background-image: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.03),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.boxCorrect {
+  background-color: #6baa65;
+}
+
+.boxWrong {
+  background-color: lightgray;
+}
+.boxDifferent {
+  background-color: #c9b457;
+}
+
+.inactive {
+  background-color: white !important;
+}
+
+.info {
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 700px;
+  background-color: rgb(255, 255, 255);
+  z-index: 999;
+  /*  border: lightgray 2px solid;  */
+}
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.game {
+  z-index: 0;
+}
+
+.usedKey {
+  background-color: lightgray !important;
+}
+
+#reload {
+  width: 335px;
+}

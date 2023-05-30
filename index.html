@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>wordle</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="info" class="info d-flex align-items-center justify-content-center flex-column h-100">
+
+    <div class="row">
+      <div id="line1" class="col flex-row d-flex justify-content-center mb-2 gap-2">
+        <input id="resultBox1" class="inputBox boxCorrect" disabled>
+        <input id="resultBox2" class="inputBox boxCorrect" disabled>
+        <input id="resultBox3" class="inputBox boxCorrect" disabled>
+        <input id="resultBox4" class="inputBox boxCorrect" disabled>
+        <input id="resultBox5" class="inputBox boxCorrect" disabled>
+      </div>
+      <p id="definitionText" class="text-center fw-lighter fst-italic"> lorem ipsum lorem ipsum </p>
+      <p id="resultText" class="display-6 text-center my-5 "> You won! </p>
+
+      <button type="button" id="reload" class="btn btn-light mx-auto">Try again</button>
+    </div>
+  </div>
+
+  <div class="game d-flex flex-column justify-content-center" style="height:100vh;">
+    <div class="container-fluid mb-5">
+      <div class="row  d-flex flex-column">
+        <div id="line1" class="col flex-row d-flex justify-content-center mb-2 gap-2">
+          <input type="text minlength=" 0" maxlength="1" id="box11" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box12" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box13" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box14" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box15" class="inputBox" autocomplete="off" disabled>
+        </div>
+
+        <div id="line2" class="col flex-row d-flex justify-content-center mb-2 gap-2">
+          <input type="text minlength=" 1" maxlength="1" id="box21" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box22" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box23" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box24" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box25" class="inputBox" autocomplete="off" disabled>
+        </div>
+
+        <div id="line3" class="col flex-row d-flex justify-content-center mb-2 gap-2 ">
+          <input type="text minlength=" 1" maxlength="1" id="box31" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box32" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box33" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box34" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box35" class="inputBox" autocomplete="off" disabled>
+        </div>
+
+        <div id="line4" class="col flex-row d-flex justify-content-center mb-2 gap-2 ">
+          <input type="text minlength=" 1" maxlength="1" id="box41" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box42" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box43" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box44" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box45" class="inputBox" autocomplete="off" disabled>
+        </div>
+        <div id="line5" class="col flex-row d-flex justify-content-center mb-2 gap-2 ">
+          <input type="text minlength=" 1" maxlength="1" id="box51" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box52" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box53" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box54" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box55" class="inputBox" autocomplete="off" disabled>
+        </div>
+        <div id="line6" class="col flex-row d-flex justify-content-center gap-2 ">
+          <input type="text minlength=" 1" maxlength="1" id="box61" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box62" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box63" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box64" class="inputBox" autocomplete="off" disabled>
+          <input type="text minlength=" 1" maxlength="1" id="box65" class="inputBox" autocomplete="off" disabled>
+        </div>
+      </div>
+
+    </div>
+    <div id="keyboard">
+      <div class="row text-center d-flex gap-2 flex-column">
+        <div class="column">
+          <button type="button" id="letter-q" class="btn btn-light">q</button>
+          <button type="button" id="letter-w" class="btn btn-light">w</button>
+          <button type="button" id="letter-e" class="btn btn-light">e</button>
+          <button type="button" id="letter-r" class="btn btn-light">r</button>
+          <button type="button" id="letter-t" class="btn btn-light">t</button>
+          <button type="button" id="letter-y" class="btn btn-light">y</button>
+          <button type="button" id="letter-u" class="btn btn-light">u</button>
+          <button type="button" id="letter-i" class="btn btn-light">i</button>
+          <button type="button" id="letter-o" class="btn btn-light">o</button>
+          <button type="button" id="letter-p" class="btn btn-light">p</button>
+        </div>
+        <div class="column">
+          <button type="button" id="letter-a" class="btn btn-light">a</button>
+          <button type="button" id="letter-s" class="btn btn-light">s</button>
+          <button type="button" id="letter-d" class="btn btn-light">d</button>
+          <button type="button" id="letter-f" class="btn btn-light">f</button>
+          <button type="button" id="letter-g" class="btn btn-light">g</button>
+          <button type="button" id="letter-h" class="btn btn-light">h</button>
+          <button type="button" id="letter-j" class="btn btn-light">j</button>
+          <button type="button" id="letter-k" class="btn btn-light">k</button>
+          <button type="button" id="letter-l" class="btn btn-light">l</button>
+          <button type="button" id="key-back" class="btn btn-outline-secondary">← </button>
+        </div>
+        <div class="column">
+          <button type="button" id="letter-z" class="btn btn-light">z</button>
+          <button type="button" id="letter-x" class="btn btn-light">x</button>
+          <button type="button" id="letter-c" class="btn btn-light">c</button>
+          <button type="button" id="letter-v" class="btn btn-light">v</button>
+          <button type="button" id="letter-b" class="btn btn-light">b</button>
+          <button type="button" id="letter-n" class="btn btn-light">n</button>
+          <button type="button" id="letter-m" class="btn btn-light">m</button>
+          <button type="button" id="key-enter" class="btn btn-outline-secondary" disabled>enter</button>
+        </div>
+        <div class="column">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- do poprawienia  -->
+  <!-- <ul>
+    <li>instrukcja?</li>
+    <li>poprawa klawiatury </li>
+  </ul> -->
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
