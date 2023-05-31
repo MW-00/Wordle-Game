@@ -11,8 +11,49 @@
 
 <body>
 
-  <div id="info" class="info d-flex align-items-center justify-content-center flex-column h-100">
+  <div id="instructions" class="d-flex info align-items-center justify-content-center flex-column h-100">
 
+    <div class="description">
+      <div class="close"></div>
+      <h3> How To Play</h3>
+      <p>You have 6 tries to guess the word.</p>
+      <p>The color of the tiles will change to show how close your guess was to the word.</p>
+      <p>Examples:</p>
+    </div>
+
+    <div class="row d-flex flex-column">
+      <p><strong>W</strong> is in the word and in the correct spot.</p>
+      <div class="col flex-row d-flex justify-content-center gap-2">
+
+        <input class="inputBox boxCorrect" value="W" disabled>
+        <input class="inputBox" value="E" disabled>
+        <input class="inputBox" value="I" disabled>
+        <input class="inputBox" value="R" disabled>
+        <input class="inputBox" value="D" disabled>
+      </div>
+      <br>
+      <p><strong>R</strong> is in the word but in the wrong spot.</p>
+      <div class="col flex-row d-flex justify-content-center gap-2">
+        <input class="inputBox" value="S" disabled>
+        <input class="inputBox" value="T" disabled>
+        <input class="inputBox" value="O" disabled>
+        <input class="inputBox boxDifferent" value="R" disabled>
+        <input class="inputBox" value="E" disabled>
+      </div>
+      <br>
+      <p><strong>L</strong> is not in the word in any spot.</p>
+      <div class="col flex-row d-flex justify-content-center gap-2">
+        <input class="inputBox" value="B" disabled>
+        <input class="inputBox boxWrong" value="L" disabled>
+        <input class="inputBox" value="I" disabled>
+        <input class="inputBox" value="N" disabled>
+        <input class="inputBox" value="K" disabled>
+      </div>
+    </div>
+    <button type="button" id="play" class="btn btn-primary mt-5 w-50">PLAY</button>
+  </div>
+
+  <div id="info" class="result info d-flex align-items-center justify-content-center flex-column h-100">
     <div class="row">
       <div id="line1" class="col flex-row d-flex justify-content-center mb-2 gap-2">
         <input id="resultBox1" class="inputBox boxCorrect" disabled>
@@ -81,38 +122,38 @@
     </div>
     <div id="keyboard">
       <div class="row text-center d-flex gap-2 flex-column">
-        <div class="column">
-          <button type="button" id="letter-q" class="btn btn-light">q</button>
-          <button type="button" id="letter-w" class="btn btn-light">w</button>
-          <button type="button" id="letter-e" class="btn btn-light">e</button>
-          <button type="button" id="letter-r" class="btn btn-light">r</button>
-          <button type="button" id="letter-t" class="btn btn-light">t</button>
-          <button type="button" id="letter-y" class="btn btn-light">y</button>
-          <button type="button" id="letter-u" class="btn btn-light">u</button>
-          <button type="button" id="letter-i" class="btn btn-light">i</button>
-          <button type="button" id="letter-o" class="btn btn-light">o</button>
-          <button type="button" id="letter-p" class="btn btn-light">p</button>
+        <div class="column" style="padding-right: 35px;">
+          <button type="button" id="letter-q" class="btn btn-light letter">q</button>
+          <button type="button" id="letter-w" class="btn btn-light letter">w</button>
+          <button type="button" id="letter-e" class="btn btn-light letter">e</button>
+          <button type="button" id="letter-r" class="btn btn-light letter">r</button>
+          <button type="button" id="letter-t" class="btn btn-light letter">t</button>
+          <button type="button" id="letter-y" class="btn btn-light letter">y</button>
+          <button type="button" id="letter-u" class="btn btn-light letter">u</button>
+          <button type="button" id="letter-i" class="btn btn-light letter">i</button>
+          <button type="button" id="letter-o" class="btn btn-light letter">o</button>
+          <button type="button" id="letter-p" class="btn btn-light letter">p</button>
         </div>
         <div class="column">
-          <button type="button" id="letter-a" class="btn btn-light">a</button>
-          <button type="button" id="letter-s" class="btn btn-light">s</button>
-          <button type="button" id="letter-d" class="btn btn-light">d</button>
-          <button type="button" id="letter-f" class="btn btn-light">f</button>
-          <button type="button" id="letter-g" class="btn btn-light">g</button>
-          <button type="button" id="letter-h" class="btn btn-light">h</button>
-          <button type="button" id="letter-j" class="btn btn-light">j</button>
-          <button type="button" id="letter-k" class="btn btn-light">k</button>
-          <button type="button" id="letter-l" class="btn btn-light">l</button>
+          <button type="button" id="letter-a" class="btn btn-light letter">a</button>
+          <button type="button" id="letter-s" class="btn btn-light letter">s</button>
+          <button type="button" id="letter-d" class="btn btn-light letter">d</button>
+          <button type="button" id="letter-f" class="btn btn-light letter">f</button>
+          <button type="button" id="letter-g" class="btn btn-light letter">g</button>
+          <button type="button" id="letter-h" class="btn btn-light letter">h</button>
+          <button type="button" id="letter-j" class="btn btn-light letter">j</button>
+          <button type="button" id="letter-k" class="btn btn-light letter">k</button>
+          <button type="button" id="letter-l" class="btn btn-light letter">l</button>
           <button type="button" id="key-back" class="btn btn-outline-secondary">← </button>
         </div>
         <div class="column">
-          <button type="button" id="letter-z" class="btn btn-light">z</button>
-          <button type="button" id="letter-x" class="btn btn-light">x</button>
-          <button type="button" id="letter-c" class="btn btn-light">c</button>
-          <button type="button" id="letter-v" class="btn btn-light">v</button>
-          <button type="button" id="letter-b" class="btn btn-light">b</button>
-          <button type="button" id="letter-n" class="btn btn-light">n</button>
-          <button type="button" id="letter-m" class="btn btn-light">m</button>
+          <button type="button" id="letter-z" class="btn btn-light letter">z</button>
+          <button type="button" id="letter-x" class="btn btn-light letter">x</button>
+          <button type="button" id="letter-c" class="btn btn-light letter">c</button>
+          <button type="button" id="letter-v" class="btn btn-light letter">v</button>
+          <button type="button" id="letter-b" class="btn btn-light letter">b</button>
+          <button type="button" id="letter-n" class="btn btn-light letter">n</button>
+          <button type="button" id="letter-m" class="btn btn-light letter">m</button>
           <button type="button" id="key-enter" class="btn btn-outline-secondary" disabled>enter</button>
         </div>
         <div class="column">
@@ -122,16 +163,9 @@
     </div>
   </div>
 
-
-<!-- do poprawienia  -->
-  <!-- <ul>
-    <li>instrukcja?</li>
-    <li>poprawa klawiatury </li>
-  </ul> -->
-
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
-    </script>
-    <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+  </script>
+  <script src="script.js"></script>
 </body>
 
 </html>

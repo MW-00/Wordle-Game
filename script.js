@@ -9,6 +9,8 @@ const keyboard = document.querySelectorAll("button[id^=letter]");
 const enter = document.getElementById("key-enter");
 const backspace = document.getElementById("key-back");
 const info = document.getElementById("info");
+const playBtn = document.getElementById("play");
+const instructions = document.getElementById("instructions");
 //okreslenie na ktorym boxie jestesmy ↓
 let whichRow = 1;
 let whichBox = 1;
@@ -141,7 +143,7 @@ keyboard.forEach((letter) => {
 enter.addEventListener("click", checkAndLock);
 backspace.addEventListener("click", erase);
 document.addEventListener("keydown", keyPressed);
-
+playBtn.addEventListener("click", play);
 //reload
 document.getElementById("reload").addEventListener("click", playAgain);
 
@@ -211,4 +213,9 @@ function getWordFromAPI() {
 
 function doesWordExist() {
   // https://api.wordnik.com/v4/word.json/gtrgt/definitions?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_key=YOURAPIKEY
+}
+
+function play() {
+  instructions.classList.remove("visible");
+  instructions.classList.add("hidden");
 }

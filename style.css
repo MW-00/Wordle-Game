@@ -1,6 +1,9 @@
-body {
+body{
   width: 100%;
+  height: 100;
+  overflow: hidden;
 }
+
 
 .box {
   display: flex;
@@ -8,6 +11,8 @@ body {
   justify-content: center;
   height: 65px;
   width: 65px;
+
+  
 }
 
 .inputBox {
@@ -18,16 +23,14 @@ body {
   border: black 1px solid;
   caret-color: transparent;
   text-transform: uppercase;
-  text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
-    -1px -1px 0 #000;
+text-shadow: -1px 1px 2px #000,
+				  1px 1px 2px #000,
+				  1px -1px 0 #000,
+				  -1px -1px 0 #000;
   color: white;
   font-weight: 800;
-  font-size: 24px;
-  background-image: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.03),
-    rgba(0, 0, 0, 0)
-  );
+  font-size: 24px; 
+  background-image: linear-gradient(135deg, rgba(0,0,0,0.03), rgba(0,0,0,0));
 }
 
 .boxCorrect {
@@ -42,28 +45,27 @@ body {
 }
 
 .inactive {
-  background-color: white !important;
+    background-color: #white !important;
 }
 
 .info {
-  visibility: hidden;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+ position: absolute; 
+top:50%;
+  left:50%; 
+  transform: translate(-50%,-50%);
   width: 450px;
   height: 700px;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   z-index: 999;
-  /*  border: lightgray 2px solid;  */
 }
 
 .visible {
-  visibility: visible;
+    visibility: visible;
 }
 
 .hidden {
-  visibility: hidden;
+    visibility: hidden;
 }
 
 .game {
@@ -76,4 +78,23 @@ body {
 
 #reload {
   width: 335px;
+}
+
+.letter {
+  width: 35px;
+  justify-text:center;
+}
+
+.description {
+  width: 381px;
+  padding: 12px;
+}
+
+.result {
+    visibility: hidden;
+}
+
+.btn-primary {
+  border: 1px solid #6baa65 !important;
+  background-color: #6baa65 !important;  
 }
